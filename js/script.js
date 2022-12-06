@@ -26,13 +26,44 @@ let start = document.getElementById('btn');
 const blackList = [];
 
 start.addEventListener('click',function(){
-    for(let i=0; i<100; i++){
+    let mode = document.getElementById('difficulty').value
+    console.log(mode)
+    if(mode == 'facile'){
+        for(let i=1; i<=100; i++){
 
-        const currentSquare = createGridSquare(i);
-        grid.appendChild(currentSquare);
-        
-        currentSquare.addEventListener('click',function(){
-            this.classList.add('clicked');
-        })
+            const currentSquare = createGridSquare(i);
+            grid.appendChild(currentSquare);
+            
+            currentSquare.addEventListener('click',function(){
+                this.classList.add('clicked');
+                console.log(`hai cliccato il numero ${i}`)
+            })
+        }
+    }
+    else if(mode == 'intermedio'){
+        for(let i=1; i<=81; i++){
+
+            const currentSquare = createGridSquare(i);
+            currentSquare.classList.add('intermedio')
+            grid.appendChild(currentSquare);
+            
+            currentSquare.addEventListener('click',function(){
+                this.classList.add('clicked');
+                console.log(`hai cliccato il numero ${i}`)
+            })
+        }
+    }
+    else if(mode == 'difficile'){
+        for(let i=1; i<=49; i++){
+
+            const currentSquare = createGridSquare(i);
+            currentSquare.classList.add('difficile')
+            grid.appendChild(currentSquare);
+            
+            currentSquare.addEventListener('click',function(){
+                this.classList.add('clicked');
+                console.log(`hai cliccato il numero ${i}`)
+            })
+        }
     }
 })

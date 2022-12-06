@@ -27,3 +27,11 @@
 .clicked{
     background-color: burlywood;
 }
+.intermedio{
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+.difficile{
+    width: calc(100% / 7);
+    height: calc(100% / 7);
+}
