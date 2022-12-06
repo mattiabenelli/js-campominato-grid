@@ -2,7 +2,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: aqua;
 }
 .container{
     width: 800px;
@@ -22,4 +21,10 @@
     width: calc(100% / 10);
     outline: 1px solid red;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clicked{
+    background-color: burlywood;
 }
