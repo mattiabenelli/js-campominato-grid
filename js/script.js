@@ -5,27 +5,12 @@ function createGridSquare(number){
     elemento.innerHTML += number;
     return elemento;
 }
-function randomNumbers(min, max){
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
-function uniqueRandomNumbers(numBlacklist, min, max){
-    
-    let randomDigit;
-    let checkDouble = false
-    while(checkDouble == true){
-        randomDigit = randomNumbers(min, max)
-        if( numBlacklist.includes(randomDigit) == false ){
-            checkDouble == true
-        }      
-    }
-    return randomDigit;
-}
 
 let grid = document.getElementById('grid');
 let start = document.getElementById('btn');
-const blackList = [];
 
 start.addEventListener('click',function(){
+    document.querySelector('.grid').innerHTML = '';
     let mode = document.getElementById('difficulty').value
     console.log(mode)
     if(mode == 'facile'){
@@ -35,8 +20,8 @@ start.addEventListener('click',function(){
             grid.appendChild(currentSquare);
             
             currentSquare.addEventListener('click',function(){
-                this.classList.add('clicked');
-                console.log(`hai cliccato il numero ${i}`)
+                this.classList.toggle('clicked');
+                console.log(this.innerText)
             })
         }
     }
@@ -48,8 +33,8 @@ start.addEventListener('click',function(){
             grid.appendChild(currentSquare);
             
             currentSquare.addEventListener('click',function(){
-                this.classList.add('clicked');
-                console.log(`hai cliccato il numero ${i}`)
+                this.classList.toggle('clicked');
+                console.log(this.innerText)
             })
         }
     }
@@ -61,8 +46,8 @@ start.addEventListener('click',function(){
             grid.appendChild(currentSquare);
             
             currentSquare.addEventListener('click',function(){
-                this.classList.add('clicked');
-                console.log(`hai cliccato il numero ${i}`)
+                this.classList.toggle('clicked');
+                console.log(this.innerText)
             })
         }
     }
